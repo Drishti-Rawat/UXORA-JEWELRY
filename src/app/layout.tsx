@@ -18,7 +18,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: 'UXORA JEWELRY | Modern High-End Aesthetics',
-  description: 'Experience the fusion of modern art and timeless luxury.',
+  description: 'A sanctuary of high-end craftsmanship and modern Parisian aesthetics. Explore our curated collections of artisanal jewelry handcrafted with soul.',
 };
 
 export default function RootLayout({
