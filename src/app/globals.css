@@ -1,42 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #FDFBF7;
+  --color-foreground: #2A2A2A;
+  --color-primary: #9E3F50;
+  --color-secondary: #EADDD7;
+  --color-accent: #B9A570;
+  --color-border: #E5E7EB;
+
+  --font-serif: var(--font-cormorant), serif;
+  --font-sans: var(--font-montserrat), sans-serif;
+
+  --breakpoint-xs: 480px;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FDFBF7;
+  --foreground: #2A2A2A;
+  --primary: #9E3F50;
+  --secondary: #EADDD7;
+  --accent: #B9A570;
+  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-montserrat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  html,
+  body {
+    @apply max-w-[100vw] overflow-x-hidden bg-background text-foreground font-sans scroll-smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-semibold leading-[1.1];
+  }
+
+  a {
+    @apply text-inherit no-underline;
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+/* Utilities */
+.text-gradient {
+  background: linear-gradient(to right, var(--primary), #ff5ba8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.gold-text {
+  color: var(--accent);
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.container {
+  @apply w-[92%] max-w-[1400px] mx-auto px-4 md:px-5 lg:px-8;
 }
